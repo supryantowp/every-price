@@ -1,9 +1,7 @@
-import { Flex, HStack, Link, Text } from '@chakra-ui/react'
+import { Flex, HStack, Image, Link, Text } from '@chakra-ui/react'
 import NextLink from 'next/link'
 
 import routes from '@/routes'
-
-import ToggleColorMode from './toggle-color-mode'
 
 const Navbar = () => {
   return (
@@ -16,24 +14,30 @@ const Navbar = () => {
       py={8}
       align='center'
       justify='space-between'
+      zIndex={999}
+      bg='#F3F6FD'
     >
-      <HStack spacing={6} justify='center'>
-        <Text fontSize='xl' fontWeight='bold'>
-          Sakura
-        </Text>
-        {routes.map(([text, href]) => (
-          <div key={href}>
-            <NextLink href={href} key={href}>
-              <Link href={href}>{text}</Link>
-            </NextLink>
-          </div>
-        ))}
-      </HStack>
-      <HStack spacing={6}>
-        <NextLink href='/login'>
-          <Link>Login</Link>
+      <Text fontWeight='bold' fontSize='xl'>
+        Every<span style={{ color: '#6E62E4' }}>Price</span>
+      </Text>
+      <HStack color='#697789' spacing={6} justify='center'>
+        <NextLink href={'#'} key={'#'}>
+          <Link href={'#'}>home</Link>
         </NextLink>
-        <ToggleColorMode />
+        <NextLink href={'#'} key={'#'}>
+          <Link href={'#'}>features</Link>
+        </NextLink>
+        <NextLink href={'#'} key={'#'}>
+          <Link href={'#'}>stories</Link>
+        </NextLink>
+        <NextLink href={'#'} key={'#'}>
+          <Link color='gray.900' href={'#'}>
+            pricing
+          </Link>
+        </NextLink>
+        <NextLink href={'#'} key={'#'}>
+          <Link href={'#'}>about</Link>
+        </NextLink>
       </HStack>
     </Flex>
   )

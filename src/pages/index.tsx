@@ -1,21 +1,31 @@
-import { Heading, Text } from '@chakra-ui/react'
+import { Box, Heading, Image, Stack, Text } from '@chakra-ui/react'
 
-import Container from '@/component/container'
-import siteConfig from '~/site-config'
+import Pricing from '@/component/pricing'
 
 const Index = () => (
-  <Container>
-    <Heading
-      bgGradient='linear(to-l, #7928CA,#FF0080)'
-      bgClip='text'
-      fontSize='6xl'
-      fontWeight='extrabold'
-    >
-      {siteConfig.title}
-    </Heading>
-    <Text>{siteConfig.description}</Text>
-    <Text>under development</Text>
-  </Container>
+  <>
+    <Stack py={8} maxW='sm' mx='auto' textAlign='center'>
+      <Heading>
+        <span style={{ color: '#6E62E4' }}>Plans</span> That Works
+      </Heading>
+      <Text>Choose a plan that works best for your own future company</Text>
+    </Stack>
+    <Pricing />
+
+    <Box py={20} px={{ base: 10, md: 20 }}>
+      <Heading fontSize='xl'>
+        <span style={{ color: '#6E62E4' }}>Trusted</span> Companies
+      </Heading>
+      <Stack my={4} spacing={8} direction='row'>
+        <Image h='40px' objectFit='cover' src='/sponsor.png' />
+        <Image h='40px' objectFit='cover' src='/sponsor-1.png' />
+        <Image h='40px' objectFit='cover' src='/sponsor-2.png' />
+        <Image h='40px' objectFit='cover' src='/sponsor-3.png' />
+        <Image h='40px' objectFit='cover' src='/sponsor-4.png' />
+        <Image h='40px' objectFit='cover' src='/sponsor-5.png' />
+      </Stack>
+    </Box>
+  </>
 )
 
 export default Index
